@@ -6,6 +6,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const DEBOUNCE_DELAY = 300;
 const ref = getRefs();
+ref.formInput.placeholder = ref.placeholder;
 
 ref.formInput.addEventListener(
   'input',
@@ -63,7 +64,7 @@ function renderingCountryInfo(country) {
             <p><strong>Population:</strong> ${country.population}</p>
             <p><strong>Languages:</strong> ${Object.values(
               country.languages
-            )} </p>
+            ).join(', ')} </p>
                 `;
     })
     .join('');
